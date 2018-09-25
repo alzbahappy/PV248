@@ -9,14 +9,15 @@ for line in file:
     matchcomposer = r_composer.match(line)
     matchcentury = r_century.match(line)
     if matchcomposer:
-        #print(match.group(1))
-        mco = matchcomposer.group(1).strip()
-        mco = re.sub(r'\(\S+\)', '', mco).strip()
-        if mco in composers:
-            pocet = int(composers.get(mco))
-            composers.update({mco: pocet+1})
-        else:
-            composers.update({mco: 1})
+        if matchcomposer is not None:
+            #print(match.group(1))
+            mco = matchcomposer.group(1).strip()
+            mco = re.sub(r'\(\S+\)', '', mco).strip()
+            if mco in composers:
+                pocet = int(composers.get(mco))
+                composers.update({mco: pocet+1})
+            else:
+                composers.update({mco: 1})
 
     if matchcentury:
         if matchcentury is not None:
