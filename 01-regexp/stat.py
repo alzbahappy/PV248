@@ -18,7 +18,6 @@ for line in file:
                 composers.update({mco: pocet+1})
             else:
                 composers.update({mco: 1})
-
     if matchcentury:
         if matchcentury is not None:
             # mce = matchcentury.group(2).strip()
@@ -34,6 +33,6 @@ for key,value in composers.items():
     print("{} {}".format(key,value))
 print("\nPieces in centuries:\n")
 for key, value in centuries.items():
-    print("{}th century {}".format(key,value))
+    print("{}th century - {}".format(key,value))
 
 
